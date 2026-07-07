@@ -1,5 +1,7 @@
 # Wedding Contacts
 
+![iPhone showing the wedding contacts app: venue card and contact list](docs/preview.webp)
+
 Mobile-first static wedding contact and schedule app built with plain HTML, CSS, and JavaScript.
 
 Live demo: https://wedding-contacts-mobile.vercel.app/
