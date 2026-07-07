@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f3540"/>
+  <path fill="none" stroke="#b68a4e" stroke-linecap="round" stroke-width="18" d="M82 168c52-28 92-28 144 0s92 28 144 0 92-28 60-10"/>
+  <text x="256" y="318" text-anchor="middle" font-family="Georgia,serif" font-size="112" fill="#ffffff">M+C</text>
+</svg>

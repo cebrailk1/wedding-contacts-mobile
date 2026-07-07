@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f3540">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Hochzeitskontakte, Anfahrt und Parkplatzinfo für M & C im ATLANTIC Grand Hotel Travemünde.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hochzeit M &amp; C · Kontakte">
+<meta property="og:description" content="Hochzeitskontakte, Anfahrt und Parkplatzinfo für M & C.">
+<meta property="og:url" content="https://wedding-contacts-mobile.vercel.app/">
+<meta property="og:image" content="https://wedding-contacts-mobile.vercel.app/icon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Hochzeit · Kontakte</title>
+<style>
+  :root{--bg:#e8edeb;--card:#fff;--ink:#15242b;--muted:#5c6b70;--line:#dbe3e1;--sea:#0f3540;--sea-press:#0a262e;--wa:#157a47;--wa-press:#0f5c36;--brass:#b68a4e;--sea-tint:#e9f0ef;--shadow:0 1px 2px rgba(21,36,43,.05),0 4px 14px rgba(21,36,43,.05)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{max-width:560px;margin:0 auto;padding:28px 18px calc(40px + env(safe-area-inset-bottom));background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;line-height:1.4;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+  .sprite{display:none}.masthead{text-align:center;padding:8px 0 18px}.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);font-weight:600}.names{margin:10px 0 8px;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:clamp(30px,9vw,40px);font-weight:500;letter-spacing:.01em;line-height:1.05}.place{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}.wave{display:block;margin:18px auto 0;width:118px;height:14px}.wave path{fill:none;stroke:var(--brass);stroke-width:1.5;opacity:.85}
+  .page-nav{display:flex;gap:8px;margin:0 0 22px}.page-nav a{flex:1;display:flex;align-items:center;justify-content:center;height:42px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--sea);font-size:13px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);transition:transform .12s ease,filter .12s ease}.page-nav a.active{background:var(--sea);color:#fff;border-color:var(--sea)}.page-nav a:active{transform:scale(.97)}.page-nav a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  section{margin-top:26px}.section-label{display:flex;align-items:center;gap:10px;margin:0 4px 12px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--sea);font-weight:700}.section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .contacts{list-style:none}.contact{display:flex;align-items:center;gap:12px;margin-bottom:10px;padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}.info{flex:1;min-width:0}.name{font-size:16px;font-weight:600;letter-spacing:-.01em}.meta{margin-top:2px;color:var(--muted);font-size:13px}.copy-number{border:0;background:transparent;color:var(--sea);font:inherit;font-weight:650;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;cursor:pointer}.copy-number.copied{padding:2px 7px;border-radius:999px;background:#e7f7ee;color:var(--wa);text-decoration:none}
+  .actions{display:flex;gap:8px;flex:none}.btn{display:grid;place-items:center;flex:none;width:48px;height:48px;border-radius:50%;color:#fff;text-decoration:none;transition:transform .12s ease,filter .12s ease}.btn svg{width:22px;height:22px;fill:currentColor}.call{background:var(--sea)}.wa{background:var(--wa)}.mail{background:var(--brass)}.btn:active{transform:scale(.93)}.call:active{background:var(--sea-press)}.wa:active{background:var(--wa-press)}.btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  .venue{padding:13px 14px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}.venue-top{display:flex;align-items:center;gap:11px}.venue-top.vt-start{align-items:flex-start}.pin{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:9px;background:var(--sea-tint);color:var(--brass)}.pin svg{width:19px;height:19px;fill:currentColor}.pin-p,.pin-person{font-size:17px;font-weight:700}.venue-name{font-size:16px;font-weight:600;letter-spacing:-.01em}.venue-addr{margin-top:2px;color:var(--muted);font-size:13px}.reception{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:var(--sea);color:#fff;text-decoration:none;transition:transform .12s ease,filter .12s ease}.reception svg{width:20px;height:20px;fill:currentColor}.reception.mail{background:var(--brass)}.reception:active{transform:scale(.93);background:var(--sea-press)}.reception.mail:active{background:#8c6938}.reception:focus-visible{outline:2px solid var(--brass);outline-offset:3px}.maps{display:flex;gap:8px;margin-top:12px}.maps a{display:flex;align-items:center;justify-content:center;gap:7px;flex:1;height:46px;border:1px solid var(--line);border-radius:12px;background:var(--sea-tint);color:var(--sea);font-size:14px;font-weight:600;text-decoration:none;transition:transform .12s ease,filter .12s ease}.maps a svg{width:17px;height:17px;fill:currentColor;flex:none}.maps a:active{transform:scale(.97);filter:brightness(.96)}.maps a:focus-visible{outline:2px solid var(--brass);outline-offset:3px}.vdivider{height:1px;background:var(--line);margin:14px 0}
+  footer{text-align:center;margin-top:30px}footer .date{color:var(--muted);font-size:12px;letter-spacing:.12em}footer .hint{margin-top:6px;color:var(--muted);font-size:11px;opacity:.75}
+  @media (hover:hover){.btn:hover,.maps a:hover,.reception:hover,.page-nav a:hover{filter:brightness(.96)}}
+</style>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.6 10.8z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 7L4.2 6.3 4 6v.5l8 4.8 8-4.8V6l-.2.3L12 11z"/></symbol>
+    <symbol id="icon-wa" viewBox="0 0 24 24"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.04 20.15h-.003a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></symbol>
+  </svg>
+
+  <header class="masthead">
+    <div class="eyebrow">DD · Monat · YYYY</div>
+    <h1 class="names">M &amp; C</h1>
+    <div class="place">ATLANTIC Grand Hotel · Travemünde</div>
+    <svg class="wave" viewBox="0 0 118 14" aria-hidden="true"><path d="M2 7 C 14 1, 26 1, 38 7 S 62 13, 74 7 S 104 1, 116 7"/></svg>
+  </header>
+
+  <main>
+    <nav class="page-nav" aria-label="Seitennavigation">
+      <a class="active" href="./" aria-current="page">Kontakte</a>
+      <a href="ablauf.html">Ablauf</a>
+    </nav>
+
+    <section aria-labelledby="grp-loc">
+      <h2 class="section-label" id="grp-loc">Veranstaltungsort</h2>
+      <div class="venue">
+        <div class="venue-top">
+          <span class="pin"><svg><use href="#icon-pin"/></svg></span>
+          <div class="info"><div class="venue-name">ATLANTIC Grand Hotel</div><div class="venue-addr">Kaiserallee 2 · 23570 Travemünde</div></div>
+          <a class="reception" href="tel:+490000000000" aria-label="Hotel-Rezeption anrufen"><svg><use href="#icon-phone"/></svg></a>
+        </div>
+        <div class="vdivider"></div>
+        <div class="venue-top">
+          <span class="pin pin-person" aria-hidden="true">E</span>
+          <div class="info"><div class="venue-name">Hotel Event-Team</div><div class="venue-addr">Ansprechpartner Hotel</div></div>
+          <a class="reception mail" href="mailto:events@example.com" aria-label="Hotel Event-Team E-Mail schreiben"><svg><use href="#icon-mail"/></svg></a>
+        </div>
+        <div class="maps">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=ATLANTIC+Grand+Hotel+Travem%C3%BCnde%2C+Kaiserallee+2%2C+23570+Travem%C3%BCnde" target="_blank" rel="noopener" aria-label="In Google Maps öffnen"><svg><use href="#icon-pin"/></svg>Google Maps</a>
+          <a href="https://maps.apple.com/?q=ATLANTIC+Grand+Hotel+Travem%C3%BCnde%2C+Kaiserallee+2%2C+23570+Travem%C3%BCnde" target="_blank" rel="noopener" aria-label="In Apple Karten öffnen"><svg><use href="#icon-pin"/></svg>Apple Karten</a>
+        </div>
+        <div class="vdivider"></div>
+        <div class="venue-top vt-start">
+          <span class="pin pin-p" aria-hidden="true">P</span>
+          <div class="info"><div class="venue-name">Parken</div><div class="venue-addr">Die Parkplätze direkt am Hotel sind vorrangig für Übernachtungsgäste. Empfehlung: Parkplatz Leuchtenfeld, ca. 5 Min. Fußweg.</div></div>
+        </div>
+        <div class="maps">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Parkplatz+Leuchtenfeld+Travem%C3%BCnde" target="_blank" rel="noopener" aria-label="Parkplatz Leuchtenfeld in Google Maps öffnen"><svg><use href="#icon-pin"/></svg>Google Maps</a>
+          <a href="https://maps.apple.com/?q=Parkplatz+Leuchtenfeld+Travem%C3%BCnde" target="_blank" rel="noopener" aria-label="Parkplatz Leuchtenfeld in Apple Karten öffnen"><svg><use href="#icon-pin"/></svg>Apple Karten</a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="grp-1">
+      <h2 class="section-label" id="grp-1">Nah zum Brautpaar</h2>
+      <ul class="contacts">
+        <li class="contact"><div class="info"><div class="name">Sophie Muster</div><div class="meta">Trauzeugin · <button class="copy-number" type="button" data-copy="+490000000001">0000 000001</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000001" aria-label="Sophie Muster anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000001" aria-label="Sophie Muster per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Jonas Beispiel</div><div class="meta">Trauzeuge · <button class="copy-number" type="button" data-copy="+490000000002">0000 000002</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000002" aria-label="Jonas Beispiel anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000002" aria-label="Jonas Beispiel per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Mila Demo</div><div class="meta">Schwester des Bräutigams · <button class="copy-number" type="button" data-copy="+490000000003">0000 000003</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000003" aria-label="Mila Demo anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000003" aria-label="Mila Demo per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Ben Sample</div><div class="meta">Bruder der Braut · <button class="copy-number" type="button" data-copy="+490000000004">0000 000004</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000004" aria-label="Ben Sample anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000004" aria-label="Ben Sample per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="grp-2">
+      <h2 class="section-label" id="grp-2">Dienstleister</h2>
+      <ul class="contacts">
+        <li class="contact"><div class="info"><div class="name">Klangduo Beispiel</div><div class="meta">Violine &amp; Piano · <button class="copy-number" type="button" data-copy="+490000000101">0000 000101</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000101" aria-label="Klangduo Beispiel anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000101" aria-label="Klangduo Beispiel per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Eventtechnik Demo</div><div class="meta">Ton &amp; Technik · <button class="copy-number" type="button" data-copy="+490000000102">0000 000102</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000102" aria-label="Eventtechnik Demo anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000102" aria-label="Eventtechnik Demo per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Eventservice Muster</div><div class="meta">Veranstaltungsservice · <button class="copy-number" type="button" data-copy="+490000000103">0000 000103</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000103" aria-label="Eventservice Muster anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn mail" href="mailto:service@example.com" aria-label="Eventservice Muster E-Mail schreiben"><svg><use href="#icon-mail"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Lena Beispiel</div><div class="meta">Traurednerin · <button class="copy-number" type="button" data-copy="+490000000104">0000 000104</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000104" aria-label="Lena Beispiel anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000104" aria-label="Lena Beispiel per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Floristik Atelier</div><div class="meta">Floristik · <button class="copy-number" type="button" data-copy="+490000000105">0000 000105</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000105" aria-label="Floristik Atelier anrufen"><svg><use href="#icon-phone"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Sound Crew</div><div class="meta">Sound &amp; Technik · <button class="copy-number" type="button" data-copy="+490000000106">0000 000106</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000106" aria-label="Sound Crew anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000106" aria-label="Sound Crew per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Konditorei Muster</div><div class="meta">Torte · <button class="copy-number" type="button" data-copy="+490000000107">0000 000107</button> / <button class="copy-number" type="button" data-copy="+490000000108">108</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000107" aria-label="Konditorei Muster anrufen"><svg><use href="#icon-phone"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">Filmteam Demo</div><div class="meta">Kamerateam · <button class="copy-number" type="button" data-copy="+490000000109">0000 000109</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000109" aria-label="Filmteam Demo anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000109" aria-label="Filmteam Demo per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+        <li class="contact"><div class="info"><div class="name">DJ Nova</div><div class="meta">DJ · <button class="copy-number" type="button" data-copy="+490000000110">0000 000110</button></div></div><div class="actions"><a class="btn call" href="tel:+490000000110" aria-label="DJ Nova anrufen"><svg><use href="#icon-phone"/></svg></a><a class="btn wa" href="https://wa.me/490000000110" aria-label="DJ Nova per WhatsApp schreiben"><svg><use href="#icon-wa"/></svg></a></div></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer><div class="date">DD. Monat YYYY · Travemünde</div><div class="hint">Telefonnummer antippen zum Kopieren</div></footer>
+
+  <script>
+    (function () {
+      var timer;
+
+      function fallbackCopy(text) {
+        var input = document.createElement('textarea');
+        input.value = text;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.top = '-1000px';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      }
+
+      function showCopied(button) {
+        clearTimeout(timer);
+        button.dataset.label = button.textContent;
+        button.textContent = 'Kopiert';
+        button.classList.add('copied');
+        timer = setTimeout(function () {
+          button.textContent = button.dataset.label;
+          button.classList.remove('copied');
+        }, 1400);
+      }
+
+      document.addEventListener('click', function (event) {
+        var button = event.target.closest('.copy-number');
+        if (!button) return;
+
+        var text = button.getAttribute('data-copy');
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(function () {}, function () {
+            fallbackCopy(text);
+          }).then(function () { showCopied(button); });
+        } else {
+          fallbackCopy(text);
+          showCopied(button);
+        }
+      });
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js').catch(function () {});
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
