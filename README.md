@@ -31,7 +31,7 @@ In the middle of all the wedding planning chaos, the same questions kept popping
 > "Where do we park?"
 > "Who's the contact person for the hotel?"
 
-So I built this. Dropped the link in the chat. All five questions got solved, permanently, in one message.
+So I built this. Dropped the link in the chat. All five questions got solved, permanently, in one message — at a wedding with over 100 guests.
 
 That was the whole point. No login, no app to install, no waiting for a 800 KB framework bundle. Open the link, the answer is already on the screen. Tap once and you're calling the right person or looking at the parking lot in Maps.
 
