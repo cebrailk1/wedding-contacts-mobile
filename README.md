@@ -1,49 +1,104 @@
+<div align="center">
+
 # Wedding Contacts
 
-![iPhone showing the wedding contacts app: venue card and contact list](docs/preview.webp)
+**A fast, mobile-first web app that gives wedding guests one shareable place for contacts, venue, parking and the day-of schedule.**
 
-Mobile-first static wedding contact and schedule app built with plain HTML, CSS, and JavaScript.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=flat&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+[![No build](https://img.shields.io/badge/build-none-success?style=flat)](#)
+[![Vercel](https://img.shields.io/badge/deploy-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://wedding-contacts-mobile.vercel.app/)
 
-Live demo: https://wedding-contacts-mobile.vercel.app/
+[**Live demo →**](https://wedding-contacts-mobile.vercel.app/)
 
-## What It Does
+<br />
 
-The project gives wedding guests one fast, shareable place for everything they need on the day itself: venue, parking details, key contacts, quick actions, and the timeline.
+<img src="docs/preview.webp" alt="iPhone showing the wedding contacts app: venue card and contact list" width="320" />
+
+</div>
+
+---
+
+## Why this exists
+
+Wedding guests need three things on the day, and they need them fast:
+
+1. Who do I call about what?
+2. Where is the venue and where do I park?
+3. What is happening when?
+
+Most wedding sites bury this behind a landing page, a hero animation, a menu, a scroll, and a framework bundle. This app skips all of that. Open the link, everything is on screen. Tap once, you are calling the right person or looking at the venue in Maps.
 
 ## Features
 
-- Quick-call, WhatsApp, and email actions for key contacts
-- Tap-to-copy phone numbers with clipboard fallback
-- Venue and parking information with Google Maps and Apple Maps links
-- Separate schedule page for the wedding day timeline
-- Mobile-first layout with safe-area spacing for modern phones
-- Static deployment without a framework runtime or build step
-- Service Worker caching for fast repeat visits and better resilience on weak mobile networks
+- **Contact list** with one-tap call, WhatsApp, and email actions
+- **Tap-to-copy** phone numbers with a `navigator.clipboard` + `execCommand` fallback
+- **Venue card** with hotel contact, event team, and both Google Maps and Apple Maps links
+- **Parking section** with dedicated Maps links to the recommended lot
+- **Schedule page** on a separate route with a timeline of the day
+- **WhatsApp share** button for the schedule so guests can forward it easily
+- **PWA installable** with a Web App Manifest and Service Worker
+- **Offline-resilient** via app-shell precache and cache-first static asset handling
 
-## Why It Is Fast
+## Performance
 
-This intentionally looks simple, but the simplicity is the performance strategy.
+The app looks simple on purpose. The simplicity *is* the performance strategy.
 
-- No framework runtime
-- No external dependencies
-- No render-blocking third-party scripts
-- Inline critical CSS for immediate rendering
-- Tiny JavaScript footprint for only the interactions that need it
-- App-shell precaching for the main pages and assets
-- Cache-first handling for static assets
-- Network-first navigation with cached fallback for HTML pages
+| Choice | Effect |
+|---|---|
+| No framework runtime | Zero JS parse cost from libraries |
+| No external dependencies | No third-party requests, no CDN roundtrips |
+| Inline critical CSS | First paint without a blocking stylesheet |
+| One tiny inline `<script>` | Only the interactions that need JS ship JS |
+| App-shell precache | Second visit renders from cache instantly |
+| Cache-first for static assets | Icons, CSS, JS come from disk on repeat views |
+| Network-first for HTML | Fresh content when online, cached fallback when not |
 
-That makes the page feel instant on mobile and keeps it usable even when the network at a busy event venue is unreliable.
+Result: the page feels instant on mobile, and it stays usable on the flaky Wi-Fi you always get at a busy event venue.
 
-## Tech Stack
+## Tech stack
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- Service Worker Cache API
+- HTML, CSS, Vanilla JavaScript
+- Service Worker with the Cache API
 - Web App Manifest
+- Deployed as static files on Vercel
+
+No framework. No bundler. No build step. `git push` is the pipeline.
+
+## Project structure
+
+```
+.
+├── index.html            # Contact list, venue and parking
+├── ablauf.html           # Day-of schedule page
+├── sw.js                 # Service Worker (app-shell + strategies)
+├── manifest.webmanifest  # PWA manifest
+├── icon.svg              # App icon
+└── docs/
+    └── preview.webp      # README screenshot
+```
+
+## Local development
+
+```bash
+# Any static server will do. Examples:
+python3 -m http.server 8080
+# or
+npx serve .
+```
+
+Open `http://localhost:8080`. The Service Worker only registers over HTTPS or `localhost`.
+
+## Deployment
+
+Push to `main`. Vercel builds nothing and deploys the raw files.
 
 ## Privacy
 
-All personal contact names, phone numbers, WhatsApp links, and email addresses in this public version are mock data. The venue and parking information are intentionally kept real so the Google Maps and Apple Maps integration works as a live demo.
+All personal contact names, phone numbers, WhatsApp links, and email addresses in this public version are mock data. The venue and parking information are kept real so the Google Maps and Apple Maps integration works as a live demo.
 
+## License
+
+MIT. Use it as a template for your own event, wedding, workshop, or meetup.
