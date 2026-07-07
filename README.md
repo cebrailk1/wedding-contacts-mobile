@@ -2,7 +2,7 @@
 
 # Wedding Contacts
 
-**A fast, mobile-first web app that gives wedding guests one shareable place for contacts, venue, parking and the day-of schedule.**
+**A tiny mobile-first web app so nobody has to ask "where do we park?" five minutes before the ceremony.**
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -21,49 +21,50 @@
 
 ---
 
-## Why this exists
+## The story
 
-Wedding guests need three things on the day, and they need them fast:
+In the middle of all the wedding planning chaos, the same questions kept popping up in the family chat:
 
-1. Who do I call about what?
-2. Where is the venue and where do I park?
-3. What is happening when?
+> "We need a phone list."
+> "What's happening when?"
+> "Where's the wedding again?"
+> "Where do we park?"
+> "Who's the contact person for the hotel?"
 
-Most wedding sites bury this behind a landing page, a hero animation, a menu, a scroll, and a framework bundle. This app skips all of that. Open the link, everything is on screen. Tap once, you are calling the right person or looking at the venue in Maps.
+So I built this one weekend. Dropped the link in the chat. All five questions got solved, permanently, in one message.
 
-## Features
+That was the whole point. No login, no app to install, no waiting for a 800 KB framework bundle. Open the link, the answer is already on the screen. Tap once and you're calling the right person or looking at the parking lot in Maps.
 
-- **Contact list** with one-tap call, WhatsApp, and email actions
-- **Tap-to-copy** phone numbers with a `navigator.clipboard` + `execCommand` fallback
-- **Venue card** with hotel contact, event team, and both Google Maps and Apple Maps links
-- **Parking section** with dedicated Maps links to the recommended lot
-- **Schedule page** on a separate route with a timeline of the day
-- **WhatsApp share** button for the schedule so guests can forward it easily
-- **PWA installable** with a Web App Manifest and Service Worker
-- **Offline-resilient** via app-shell precache and cache-first static asset handling
+## What it does
 
-## Performance
+Everything a guest needs on the wedding day, on one page, on their phone.
 
-The app looks simple on purpose. The simplicity *is* the performance strategy.
+- One-tap **call**, **WhatsApp**, or **email** for every contact
+- **Tap-to-copy** phone numbers (with a clipboard fallback that actually works)
+- **Venue and parking** with direct links to Google Maps and Apple Maps
+- A separate **schedule page** with the day-of timeline
+- **WhatsApp share** button so guests can forward the schedule in two taps
+- Installable as a **PWA**, works offline, stays fast on bad venue Wi-Fi
 
-| Choice | Effect |
+## Why it's fast
+
+Because it does almost nothing.
+
+| Choice | Why it matters |
 |---|---|
 | No framework runtime | Zero JS parse cost from libraries |
 | No external dependencies | No third-party requests, no CDN roundtrips |
-| Inline critical CSS | First paint without a blocking stylesheet |
-| One tiny inline `<script>` | Only the interactions that need JS ship JS |
+| Inline critical CSS | First paint doesn't wait for a stylesheet |
+| One tiny inline `<script>` | JS only for the interactions that need it |
 | App-shell precache | Second visit renders from cache instantly |
-| Cache-first for static assets | Icons, CSS, JS come from disk on repeat views |
+| Cache-first for static assets | Icons and styles come from disk on repeat views |
 | Network-first for HTML | Fresh content when online, cached fallback when not |
 
-Result: the page feels instant on mobile, and it stays usable on the flaky Wi-Fi you always get at a busy event venue.
+The result: it feels instant, and it doesn't fall apart when 200 people share the same overloaded hotel Wi-Fi.
 
-## Tech stack
+## Tech
 
-- HTML, CSS, Vanilla JavaScript
-- Service Worker with the Cache API
-- Web App Manifest
-- Deployed as static files on Vercel
+Plain HTML, CSS, and Vanilla JavaScript. A Service Worker with the Cache API. A Web App Manifest. Deployed as static files on Vercel.
 
 No framework. No bundler. No build step. `git push` is the pipeline.
 
@@ -71,34 +72,37 @@ No framework. No bundler. No build step. `git push` is the pipeline.
 
 ```
 .
-├── index.html            # Contact list, venue and parking
-├── ablauf.html           # Day-of schedule page
-├── sw.js                 # Service Worker (app-shell + strategies)
+├── index.html            # Contacts, venue, parking
+├── ablauf.html           # Day-of schedule
+├── sw.js                 # Service Worker
 ├── manifest.webmanifest  # PWA manifest
 ├── icon.svg              # App icon
 └── docs/
     └── preview.webp      # README screenshot
 ```
 
-## Local development
+## Run it locally
 
 ```bash
-# Any static server will do. Examples:
 python3 -m http.server 8080
 # or
 npx serve .
 ```
 
-Open `http://localhost:8080`. The Service Worker only registers over HTTPS or `localhost`.
+Open `http://localhost:8080`. The Service Worker only registers on HTTPS or `localhost`, so local dev works out of the box.
 
 ## Deployment
 
-Push to `main`. Vercel builds nothing and deploys the raw files.
+Push to `main`. Vercel serves the raw files. That's it.
 
 ## Privacy
 
-All personal contact names, phone numbers, WhatsApp links, and email addresses in this public version are mock data. The venue and parking information are kept real so the Google Maps and Apple Maps integration works as a live demo.
+All personal contact names, phone numbers, WhatsApp links, and email addresses in the public version are mock data. The venue and parking info stay real so the Maps integration is a live, working demo.
+
+## What's next
+
+I'm thinking about turning this into a small no-code tool — couples fill in their details, get their own version, no code involved. If that sounds useful to you, ping me.
 
 ## License
 
-MIT. Use it as a template for your own event, wedding, workshop, or meetup.
+MIT. Use it as a template for your own wedding, workshop, event, or meetup.
